@@ -825,6 +825,8 @@ pub mod save {
 
         // Check if it's a PS Save Wizard save file
         pub fn is_ps_save_wizard(br: &mut BinaryReader) -> bool {
+	true
+}
             br.jmp(0x1960070);
             let regulation = br.read_bytes(0x240010).expect("");
             let digest = md5::compute(regulation);
